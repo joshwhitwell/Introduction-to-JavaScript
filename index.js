@@ -1,35 +1,44 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
+const votingAge = 21;
 
-
-
+if (votingAge > 18) {
+    console.log(true);
+}
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
+let myMood = "Meh";
 
+let dayOfWeek = "Friday";
 
+if (dayOfWeek === "Monday") {
+    myMood = "Meh";
+} else if (dayOfWeek === "Friday") {
+    myMood = "Hooray! It's Friday!"
+}
+
+console.log("My mood: " + myMood);
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-
-
-
+console.log(Number("1999"));
 
 //Task d: Write a function to multiply a*b 
 
+const multiplyNumbers = (a, b) => a * b;
 
-
-
+console.log(multiplyNumbers(5, 4));
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
+const dogYears = (myAge) => myAge * 7;
 
-
-
+console.log("My Age in dog years: " + dogYears(26));
 
 /************************************************************** Task 3 **************************************************************/
 //Dog feeder 
@@ -49,9 +58,33 @@
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
+function poundsPerDay (weight, age) {
+    if (age < 1) {
+        if (age >= (2/12) && age < (4/12)) {
+            return weight * .1;
+        } else if (age >= (4/12) && age < (7/12)) {
+            return weight * .05;
+        } else if (age >= (7/12) && age < (12/12)) {
+            return weight * .04;
+        }
+    } 
+    else if (age >= 1) {
+        if (weight <= 5) {
+            return weight * .05;
+        } 
+        else if (weight <= 10) {
+            return weight * .04;
+        } 
+        else if (weight <= 15) {
+            return weight * .03;
+        } 
+        else if (weight > 15) {
+            return weight * .02;
+        }
+    }
+}
 
-
-
+console.log("Amount of food per day: " + poundsPerDay(15, 1) + " pounds.");
 
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Sissors
