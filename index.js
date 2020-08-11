@@ -93,31 +93,62 @@ console.log("Amount of food per day: " + poundsPerDay(15, 1) + " pounds.");
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
+// 1=rock
+// 2=paper
+// 3=scissors
+
+function rockPaperScissors (yourChoice) {
+    computerChoice = Math.floor(Math.random() * 3) +1;
+    if (yourChoice === "rock" && computerChoice === 3) {
+        return "Rock breaks scissors. You win!"
+    } else if (yourChoice === "rock" && computerChoice === 2) {
+        return "Paper covers rock. You lose!"
+    } else if (yourChoice === "rock" && computerChoice === 1) {
+        return "Draw!";
+    } else if (yourChoice === "paper" && computerChoice === 3) {
+        return "Scissors cut paper. You lose!"
+    } else if (yourChoice === "paper" && computerChoice === 2) {
+        return "Draw!"
+    } else if (yourChoice === "paper" && computerChoice === 1) {
+        return "Paper covers rock. You win!"
+    } else if (yourChoice === "scissors" && computerChoice === 3) {
+        return "Draw!"
+    } else if (yourChoice === "scissors" && computerChoice === 2) {
+        return "Scissors cut paper. You win!"
+    } else if (yourChoice === "scissors" && computerChoice === 1) {
+        return "Rock breaks scissors. You lose!"
+    }
+}
+
+console.log(rockPaperScissors("scissors"));
   
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+const kilometersToMiles = (kilometers) => kilometers * 0.621371;
 
-
-
+console.log(kilometersToMiles(5));
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
+const feetToCentimeters = (feet) => feet * 30.48;
 
-
-
+console.log(feetToCentimeters(5));
 
 /************************************************************** Task 6 **************************************************************/
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
+function annoyingSong (startingNumber) {
+    for (let i = startingNumber; i > 0; i -= 1) {
+        console.log(i + " bottles of soda on the wall, " + i + " bottles of soda, take one down pass it around " + (i-1) + " bottles of soda on the wall.");
+    }
+}
 
-
-
+annoyingSong(5);
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
@@ -128,10 +159,22 @@ console.log("Amount of food per day: " + poundsPerDay(15, 1) + " pounds.");
 //60s should be D 
 //and anything below 60 should be F
   
+function letterGrade (mark) {
+    if (mark < 60) {
+        return "Letter grade: F";
+    } else if (mark < 70) {
+        return "Letter grade: D";
+    } else if (mark < 80) {
+        return "Letter grade: C";
+    } else if (mark < 90) {
+        return "Letter grade: B";
+    } else if (mark < 100) {
+        return "Letter grade: A";
+    }
+}
 
+console.log(letterGrade(Math.floor(Math.random()*100)));
   
-  
-
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays 
