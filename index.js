@@ -180,9 +180,17 @@ console.log(letterGrade(Math.floor(Math.random()*100)));
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
+function countVowels (string) {
+    let counter = 0;
+    for (i=0; i < string.length; i++) {
+        if (string[i] === "a" || string[i] === "e" || string[i] === "i" || string[i] === "o" || string[i] === "u" || string[i] === "A" || string[i] === "E" || string[i] === "I" || string[i] === "O" || string[i] === "U") {
+            counter++;
+        }
+    }
+    return counter;
+}
 
-
-
+console.log("The sentence: 'Onomatopoeia has a lot of vowels.' has: " + countVowels("Onomatopoeia has a lot of vowels.") + " vowels.");
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
